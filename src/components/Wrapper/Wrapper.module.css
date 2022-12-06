@@ -1,0 +1,8 @@
+.wrapper__center {
+    max-width: 1400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
