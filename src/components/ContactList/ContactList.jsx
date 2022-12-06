@@ -15,7 +15,7 @@ const ContactList = () => {
   const contacts = useSelector(state => state.contacts.items);
   const filterValue = useSelector(state => state.filter);
   const filteredContacts = getFilteredContacts(contacts, filterValue);
-  console.log(filteredContacts)
+  // console.log(filteredContacts)
   useEffect(() => {
   // async function fetchData() {
     dispatch(fetchContacts())

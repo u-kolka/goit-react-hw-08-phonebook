@@ -15,10 +15,9 @@ function ContactForm() {
     const form = event.target;
 
     for (let contact of contacts) {
+        console.log(contact)
       if (form.elements.name.value.toLowerCase() === contact.name.toLowerCase()) {
-        return toast.info(form.elements.name.value + ' is already in contacts!', {
-          icon: "🚀"
-        });
+        return toast.info(form.elements.name.value + ' is already in contacts!', {icon: "🚀"});
       }
     }
 
