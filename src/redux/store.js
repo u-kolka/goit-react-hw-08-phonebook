@@ -1,14 +1,3 @@
-// import { configureStore } from "@reduxjs/toolkit";
-// import { filtersReducer } from "./contacts/filterSlice";
-// import { contactsReducer } from "./contacts/contactsSlice";
- 
-// export const store = configureStore({
-//     reducer: {
-//         contacts: contactsReducer,
-//         filter: filtersReducer,
-//     },
-// });
-
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import {
   persistStore,

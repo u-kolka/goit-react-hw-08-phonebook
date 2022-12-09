@@ -4,19 +4,12 @@ import { createAsyncThunk } from '@reduxjs/toolkit'
 export const fetchContacts = createAsyncThunk(
   'contacts/fetchAll',
   async (_, { rejectWithValue }) => {
-    // const controller = new AbortController();
-    
     try {
-      const response = await axios.get("/contacts",
-        // {signal: controller.signal}
-      );
+      const response = await axios.get("/contacts");
       return response.data;
     } catch (error) {
       return rejectWithValue(error);
     }
-    // finally {
-    //   controller.abort();
-    // }
   }
 );
 

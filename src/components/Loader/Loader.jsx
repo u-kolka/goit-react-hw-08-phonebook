@@ -1,9 +1,8 @@
-import { PropagateLoader  } from 'react-spinners';
+import { PropagateLoader } from 'react-spinners';
+import css from './Loader.module.css'
 
-const Loader = () => {
+export const Loader = () => {
     return (
-        <div style={{height: '20px', marginTop: '20px',}}><PropagateLoader color="#20bbff"/></div>
+        <div className={css.loader__box}><PropagateLoader color="#20bbff"/></div>
     )
 }
-
-export default Loader;

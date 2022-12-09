@@ -38,6 +38,5 @@ p {
 }
 
 .active {
-  /* background-color: blue; */
   color: rgb(109, 182, 251);
 }

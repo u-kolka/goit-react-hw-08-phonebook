@@ -1,8 +1,19 @@
 .userMenu__box {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-weight: 700;
     font-size: 24px;
-    padding: 10px 0;
 }
 
+.link {
+    display: inline-block;
+    text-decoration: none;
+    padding: 12px;
+    font-weight: 700;
+    color: #2a363b;
+}
+
+.link:hover {
+    color: rgb(109, 182, 251);
+}
