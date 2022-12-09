@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { register } from 'redux/auth/operations';
 import { Button } from 'components/Button/Button';
+import { passwordShow } from 'components/function/passwordShow';
 import css from './RegisterForm.module.css';
 
 export const RegisterForm = () => {
@@ -16,7 +17,6 @@ export const RegisterForm = () => {
         password: form.elements.password.value,
       })
     );
-    form.reset();
   };
 
   return (
@@ -31,7 +31,8 @@ export const RegisterForm = () => {
       </label>
       <label className={css.form__label}>
         Password
-        <input type="password" name="password" />
+        <input type="password" name="password" id='input-password' />
+        <span className={css.span_visible_password} onClick={passwordShow}></span>
       </label>
       <Button type="submit" className={css.form__btn}>Register</Button>
     </form>

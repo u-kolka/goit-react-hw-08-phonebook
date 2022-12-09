@@ -1,6 +1,6 @@
 import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import { Layout } from './UserMenu/Layout';
 import { PrivateRoute } from './UserMenu/PrivateRoute';
 import { RestrictedRoute } from './UserMenu/RestrictedRoute';
@@ -41,10 +41,11 @@ export const App = () => {
         <Route
           path="/contacts"
           element={
-            <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+            <PrivateRoute redirectTo="/" component={<ContactsPage />} />
           }
         />
-      </Route>
+        </Route>
+        <Route path="*" element={<Navigate to={"/contacts"}/>}></Route>
     </Routes>
   );
 };
