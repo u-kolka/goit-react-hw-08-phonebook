@@ -1,0 +1,15 @@
+.header {
+    position: absolute;
+    top: 125px;
+    left: 55px;
+    width: 820px;
+    padding: 0 15px;
+    border-bottom: 2px solid black;
+}
+
+.header>nav {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 24px;
+}

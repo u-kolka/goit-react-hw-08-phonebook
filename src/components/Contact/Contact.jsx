@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { toast } from 'react-toastify';
 import { useDispatch } from "react-redux";
 import { deleteContact } from 'redux/contacts/operations';
+import { Button } from 'components/Button/Button';
 import css from "./Contact.module.css";
 
 const Contact = ({ name, number, contactID }) => {
@@ -13,8 +14,8 @@ const Contact = ({ name, number, contactID }) => {
     
     return (
         <li className={css.contact__item}>
-            <p>{name}: {number}</p>
-            <button className={css.contact__btn} onClick={handleDelete}>Delete</button>
+            <p>{name}: </p><p>{number}</p>
+            <Button className={css.contact__btn} onClick={handleDelete}>Delete</Button>
         </li>
     );
 };

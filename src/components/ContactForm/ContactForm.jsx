@@ -2,6 +2,7 @@ import { nanoid } from 'nanoid';
 import { toast } from 'react-toastify';
 import { useDispatch, useSelector  } from "react-redux";
 import { addContact } from 'redux/contacts/operations';
+import { Button } from 'components/Button/Button';
 import css from './ContactForm.module.css'
 
 function ContactForm() {
@@ -15,7 +16,7 @@ function ContactForm() {
     const form = event.target;
 
     for (let contact of contacts) {
-        console.log(contact)
+
       if (form.elements.name.value.toLowerCase() === contact.name.toLowerCase()) {
         return toast.info(form.elements.name.value + ' is already in contacts!', {icon: "🚀"});
       }
@@ -30,7 +31,7 @@ function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={css.form}>
       <label className={css.form__label} htmlFor={nameInputId}> Name
         <input
           type="text"
@@ -51,7 +52,7 @@ function ContactForm() {
           required
         ></input>
       </label>
-      <button className={css.form__btn} type='submit'>Add contact</button>
+      <Button className={css.form__btn} type='submit'>Add contact</Button>
     </form>
   );
 }

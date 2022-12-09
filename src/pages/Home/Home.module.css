@@ -1,0 +1,17 @@
+.home__container {
+    text-align: center;
+}
+
+.home__title {
+    font-weight: 500;
+    font-size: 48;
+    text-align: center;
+}
+
+.home__item {
+    margin-top: 30px;
+}
+
+.home__text {
+    font-size: 24px;
+}
