@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { fetchContacts } from 'redux/contacts/operations';
 
 
@@ -24,9 +24,7 @@ export default function Contacts() {
       <ContactForm />
       <div>
         <Filter />
-        <ContactList>
-
-        </ContactList>
+        <ContactList />
       </div>
     </div>
   );
