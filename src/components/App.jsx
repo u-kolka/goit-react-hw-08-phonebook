@@ -1,11 +1,12 @@
 import { useEffect, lazy } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import { Layout } from './UserMenu/Layout';
 import { PrivateRoute } from './UserMenu/PrivateRoute';
 import { RestrictedRoute } from './UserMenu/RestrictedRoute';
 import { refreshUser } from 'redux/auth/operations';
 import { useAuth } from './hooks/useAuth';
+import { isToken } from 'redux/auth/selectors';
 
 const HomePage = lazy(() => import('../pages/Home/Home'));
 const RegisterPage = lazy(() => import('../pages/Register'));
@@ -14,10 +15,10 @@ const ContactsPage = lazy(() => import('../pages/Contacts'));
 
 export const App = () => {
   const dispatch = useDispatch();
-  const { isLoggedIn, isRefreshing } = useAuth();
+  const { isRefreshing } = useAuth();
+  const token = useSelector(isToken);
 
   useEffect(() => {
-    if (isRefreshing) return;
     dispatch(refreshUser());
   }, [dispatch]);
 
@@ -46,7 +47,7 @@ export const App = () => {
           }
         />
         </Route>
-        <Route path="*" element={<Navigate to={isLoggedIn ? '/contacts' : '/'} />}></Route>
+        <Route path="*" element={<Navigate to={token ? '/contacts' : '/'} />}></Route>
     </Routes>
   );
 };
